@@ -1,0 +1,160 @@
+[TITLE]
+
+
+[JUNCTIONS]
+;ID              	Elev        	Demand      	Pattern         
+ J1              	0           	6           	                	;
+ J2              	0           	8           	                	;
+ J3              	0           	8           	                	;
+ J4              	0           	8           	                	;
+ J5              	0           	0           	                	;
+ J6              	0           	0           	                	;
+ J7              	0           	6           	                	;
+ J8              	0           	4           	                	;
+ J9              	0           	4           	                	;
+ J10             	0           	6           	                	;
+
+[RESERVOIRS]
+;ID              	Head        	Pattern         
+ R1              	20          	                	;
+
+[TANKS]
+;ID              	Elevation   	InitLevel   	MinLevel    	MaxLevel    	Diameter    	MinVol      	VolCurve        	Overflow
+
+[PIPES]
+;ID              	Node1           	Node2           	Length      	Diameter    	Roughness   	MinorLoss   	Status
+ P1              	R1              	J1              	400         	250         	140         	0           	Open  	;
+ P2              	J1              	J2              	300         	250         	140         	0           	Open  	;
+ P3              	J2              	J3              	230         	150         	140         	0           	Open  	;
+ P4              	J3              	J4              	170         	100         	140         	0           	Open  	;
+ P5              	J2              	J5              	250         	150         	140         	0           	Open  	;
+ P6              	J6              	J7              	310         	150         	140         	0           	Open  	;
+ P7              	J5              	J8              	310         	150         	140         	0           	Open  	;
+ P8              	J7              	J8              	250         	150         	140         	0           	Open  	;
+ P9              	J8              	J9              	100         	100         	140         	0           	Open  	;
+ P10             	J8              	J10             	80          	100         	140         	0           	Open  	;
+
+[PUMPS]
+;ID              	Node1           	Node2           	Parameters
+
+[VALVES]
+;ID              	Node1           	Node2           	Diameter    	Type	Setting     	MinorLoss   
+ V1              	J2              	J6              	100         	PRV 	0           	0           	;
+
+[TAGS]
+
+[DEMANDS]
+;Junction        	Demand      	Pattern         	Category
+
+[STATUS]
+;ID              	Status/Setting
+
+[PATTERNS]
+;ID              	Multipliers
+
+[CURVES]
+;ID              	X-Value     	Y-Value
+
+[CONTROLS]
+
+
+[RULES]
+
+
+[ENERGY]
+ Global Efficiency  	75
+ Global Price       	0
+ Demand Charge      	0
+
+[EMITTERS]
+;Junction        	Coefficient
+
+[QUALITY]
+;Node            	InitQual
+
+[SOURCES]
+;Node            	Type        	Quality     	Pattern
+
+[REACTIONS]
+;Type     	Pipe/Tank       	Coefficient
+
+
+[REACTIONS]
+ Order Bulk            	1
+ Order Tank            	1
+ Order Wall            	1
+ Global Bulk           	0
+ Global Wall           	0
+ Limiting Potential    	0
+ Roughness Correlation 	0
+
+[MIXING]
+;Tank            	Model
+
+[TIMES]
+ Duration           	0:00 
+ Hydraulic Timestep 	1:00 
+ Quality Timestep   	0:05 
+ Pattern Timestep   	1:00 
+ Pattern Start      	0:00 
+ Report Timestep    	1:00 
+ Report Start       	0:00 
+ Start ClockTime    	12 am
+ Statistic          	NONE
+
+[REPORT]
+ Status             	No
+ Summary            	No
+ Page               	0
+
+[OPTIONS]
+ Units              	LPS
+ Headloss           	H-W
+ Specific Gravity   	1
+ Viscosity          	1
+ Trials             	40
+ Accuracy           	0.001
+ CHECKFREQ          	2
+ MAXCHECK           	10
+ DAMPLIMIT          	0
+ Unbalanced         	Continue 10
+ Pattern            	1
+ Demand Multiplier  	1.0
+ Emitter Exponent   	0.5
+ Quality            	None mg/L
+ Diffusivity        	1
+ Tolerance          	0.01
+
+[COORDINATES]
+;Node            	X-Coord           	Y-Coord
+J1              	818.594           	7104.179          
+J2              	2020.315          	7104.179          
+J3              	2020.315          	8000.256          
+J4              	2825.980          	8000.256          
+J5              	3137.850          	7104.179          
+J6              	2020.315          	6707.844          
+J7              	2020.315          	5862.646          
+J8              	3137.850          	5862.646          
+J9              	3137.850          	5375.349          
+J10             	3566.671          	5862.646          
+R1              	-734.260          	7104.179          
+
+[VERTICES]
+;Link            	X-Coord           	Y-Coord
+
+[LABELS]
+;X-Coord             Y-Coord             Label & Anchor Node
+-248.500          	7897.836          	"Total demand = 50 LPS, Length = 2400 m "	
+-248.500          	7670.431          	"Z1 - Demand 30 LPS, Junctions J1 - J5"	
+-248.500          	7482.009          	"Z2 - Demand 20 LPS, Junctions J6 - J10"	
+-800.000          	6851.771          	"Unit-Length - K = 0 for P5, K = 0.5 for P7 and K = 1.0 for rest"	
+-799.112          	6656.610          	"Equal-Distribution - N = 0 for J5, N = 0.5 for J3, J9 and N = 1.0 for rest"	
+155.814           	6293.237          	"Sample1.inp"	
+
+[BACKDROP]
+  DIMENSIONS  	0.000             	0.000             	10000.000         	10000.000         
+ UNITS          	None
+ FILE           	
+ OFFSET         	0.00            	0.00            
+
+[END]
