@@ -59,8 +59,18 @@ public partial class Form1 : Form
         MaximizeBox = false;
         MinimizeBox = false;
         ShowIcon = false;
+        Icon = System.Drawing.Icon.ExtractAssociatedIcon(Application.ExecutablePath)
+            ?? throw new InvalidOperationException("The application executable icon could not be loaded.");
         StartPosition = FormStartPosition.CenterScreen;
         FormClosing += Form1_FormClosing;
+    }
+
+    private static Image LoadTitleBarLogo()
+    {
+        using var stream = typeof(Form1).Assembly.GetManifestResourceStream("Demand_Gen.Assets.epanet-jda-app.png")
+            ?? throw new InvalidOperationException("The embedded application logo could not be found.");
+        using var source = Image.FromStream(stream);
+        return new Bitmap(source);
     }
 
     private void BuildControls()
@@ -78,11 +88,21 @@ public partial class Form1 : Form
             Location = Point.Empty,
             Size = new Size(ClientSize.Width, TitleBarHeight)
         };
+        var titleBarLogoImage = LoadTitleBarLogo();
+        var titleBarLogo = new PictureBox
+        {
+            Image = titleBarLogoImage,
+            Location = new Point(5, 5),
+            Size = new Size(22, 22),
+            SizeMode = PictureBoxSizeMode.Zoom
+        };
+        titleBarLogo.Disposed += (_, _) => titleBarLogoImage.Dispose();
+        titleBarLogo.MouseDown += TitleBar_MouseDown;
         var windowTitleLabel = new Label
         {
             AutoSize = false,
-            Location = new Point(24, 0),
-            Size = new Size(ClientSize.Width - 24 - 3 * TitleBarButtonWidth, TitleBarHeight),
+            Location = new Point(34, 0),
+            Size = new Size(ClientSize.Width - 34 - 3 * TitleBarButtonWidth, TitleBarHeight),
             Text = this.Text,
             TextAlign = ContentAlignment.MiddleLeft
         };
@@ -105,7 +125,7 @@ public partial class Form1 : Form
         closeWindowButton.Click += (_, _) => Close();
         AddHoverHelp(closeWindowButton, "Close the demand generator.");
 
-        titleBarPanel.Controls.AddRange([windowTitleLabel, helpWindowButton, minimizeWindowButton, closeWindowButton]);
+        titleBarPanel.Controls.AddRange([titleBarLogo, windowTitleLabel, helpWindowButton, minimizeWindowButton, closeWindowButton]);
 
         // The main form body starts with network selection and session controls.
         var titleLabel = new Label
