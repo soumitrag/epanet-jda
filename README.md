@@ -21,9 +21,9 @@ See the epanetjdahelp.pdf (user guide, in the docs folder) file for installation
 
 To publish a self-contained, single-file Windows x64 application:
 
-powershell
+```powershell
 dotnet publish .\src\Demand_Gen.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
-
+```
 
 The publish output is written to src\bin\Release\net10.0-windows\win-x64\publish. Distribute the executable together with the published help PDF and sample network file.
 
