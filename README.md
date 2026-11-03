@@ -2,7 +2,7 @@
 
 EPANET-JDA is a Windows-based utility which calculates junction base demands of an EPANET 2.2 hydraulic network model. It supports two standard demand allocation methodologies: **Unit-Length** and **Equal-Distribution** (refer help file for detail). The application does not execute EPANET hydraulic simulations and does not require the EPANET simulation engine installed on the host machine.
 
-The program reads a user-supplied input (.inp) file of EPANET 2.2, computes junction demands according to user-defined zones and weighting parameters, and writes a separate, verified input (.inp) file. The source file is never overwritten or altered.
+The program reads a user-supplied input (.inp) file of EPANET 2.2, computes junction demands according to user-defined zones and weighting parameters, and writes a separate, verified input (.inp) file. The source input (.inp) file is never overwritten or altered.
 
 ## System Requirements and Installation
 
@@ -13,7 +13,7 @@ See the epanetjdahelp.pdf (user guide, in the docs folder) file for installation
 
 ## Run the standalone Windows application
 
-**Package Archive (epanetjda.zip):** Contains epanetjda.exe, epanetjdahelp.pdf (user guide), and one sample input (.inp) file of EPANET 2.2. 
+**Package Archive (epanetjda.zip):** Contains epanetjda.exe, epanetjdahelp.pdf (user guide), and one sample input (.inp) file of EPANET 2.2. Extract the zip folder to any local drive.
 
 Download the Windows x64 release ZIP and extract it. Run **epanetjda.exe** from the extracted folder. The packaged executable is self-contained, so no separate .NET runtime installation is required.
 
@@ -27,4 +27,4 @@ dotnet publish .\src\Demand_Gen.csproj -c Release -r win-x64 --self-contained tr
 
 The publish output is written to src\bin\Release\net10.0-windows\win-x64\publish. Distribute the executable together with the published help PDF and sample network file.
 
-Review the generated input file before using it in EPANET. 
+Review the generated input (.inp) file before using it in EPANET. 
