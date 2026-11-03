@@ -15,7 +15,7 @@ See the epanetjdahelp.pdf (user guide, in the docs folder) file for installation
 
 **Package Archive (epanetjda.zip):** Contains epanetjda.exe, epanetjdahelp.pdf (user guide), and one sample input (.inp) file of EPANET 2.2. Extract the zip folder to any local drive.
 
-Download the Windows x64 release ZIP and extract it. Run **epanetjda.exe** from the extracted folder. The packaged executable is self-contained, so no separate .NET runtime installation is required.
+[Download the latest epanetjda.zip](https://github.com/soumitrag/epanet-jda/releases/latest) (Windows x64 release) and extract it. Run **epanetjda.exe** from the extracted folder. The packaged executable is self-contained, so no separate .NET runtime installation is required.
 
 ## Publish a standalone x64 executable
 
