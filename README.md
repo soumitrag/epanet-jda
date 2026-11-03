@@ -27,4 +27,8 @@ dotnet publish .\src\Demand_Gen.csproj -c Release -r win-x64 --self-contained tr
 
 The publish output is written to src\bin\Release\net10.0-windows\win-x64\publish. Distribute the executable together with the published help PDF and sample network file.
 
-Review the generated input (.inp) file before using it in EPANET. 
+Review the generated input (.inp) file before using it in EPANET.
+
+## License
+
+EPANET-JDA is open-source software licensed under the GNU General Public License v3.0 (GPLv3). See [LICENSE](LICENSE). 
