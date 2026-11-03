@@ -4,7 +4,7 @@ EPANET-JDA is a Windows-based utility which calculates junction base demands of 
 
 The program reads a user-supplied input (.inp) file of EPANET 2.2, computes junction demands according to user-defined zones and weighting parameters, and writes a separate, verified input (.inp) file. The source file is never overwritten or altered.
 
-### 2. System Requirements and Installation
+## System Requirements and Installation
 
 **Operating System:** Windows 10 or Windows 11.
 **Runtime:** Standalone desktop executable (no external installer or runtime setup wizard required).
