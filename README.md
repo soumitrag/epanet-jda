@@ -9,7 +9,7 @@ The program reads a user-supplied input (.inp) file of EPANET 2.2, computes junc
 **Operating System:** Windows 10 or Windows 11.
 **Runtime:** Standalone desktop executable (no external installer or runtime setup wizard required).
 
-See the epanetjdahelp.pdf (user guide) file for installation and operation instructions, allocation rules, and troubleshooting.
+See the epanetjdahelp.pdf (user guide, in the docs folder) file for installation and operation instructions, allocation rules, and troubleshooting.
 
 ## Run the standalone Windows application
 
@@ -22,9 +22,9 @@ Download the Windows x64 release ZIP and extract it. Run **epanetjda.exe** from 
 To publish a self-contained, single-file Windows x64 application:
 
 powershell
-dotnet publish .\Demand_Gen.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
+dotnet publish .\src\Demand_Gen.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
 
 
-The publish output is written to bin\Release\net10.0-windows\win-x64\publish. Distribute the executable together with the published help PDF and sample network file.
+The publish output is written to src\bin\Release\net10.0-windows\win-x64\publish. Distribute the executable together with the published help PDF and sample network file.
 
 Review the generated input file before using it in EPANET. 

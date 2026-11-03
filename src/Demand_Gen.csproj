@@ -13,9 +13,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="tests/**/*.cs" />
-    <None Update="epanetjdahelp.pdf" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
-    <None Update="samples\Sample1.inp" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Include="..\docs\epanetjdahelp.pdf" Link="epanetjdahelp.pdf" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Include="..\samples\Sample1.inp" Link="samples\Sample1.inp" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <EmbeddedResource Include="Assets\epanet-jda-app.png" LogicalName="Demand_Gen.Assets.epanet-jda-app.png" />
   </ItemGroup>
 

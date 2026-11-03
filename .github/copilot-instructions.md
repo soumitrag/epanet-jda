@@ -9,4 +9,4 @@
 - Validate all zone, junction, pipe, K-factor, and method-specific modifier instructions before calculating. Do not silently repair invalid input.
 - Preserve unrelated EPANET data and formatting when writing generated files where practical, then reread and verify generated demand values.
 - Do not add an EPANET simulation dependency unless needed and agreed; the current app prepares input files rather than running hydraulic analysis.
-- Build with dotnet build .\Demand_Gen.csproj from the workspace root. Run on Windows with dotnet run --project .\Demand_Gen.csproj.
+- Build with dotnet build .\src\Demand_Gen.csproj from the workspace root. Run on Windows with dotnet run --project .\src\Demand_Gen.csproj.
